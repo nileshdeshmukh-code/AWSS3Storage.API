@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSStorage.API", "AWS.API\AWSStorage.API.csproj", "{F18DEFA8-BCB4-4EA1-966B-CD367BECEA56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F18DEFA8-BCB4-4EA1-966B-CD367BECEA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18DEFA8-BCB4-4EA1-966B-CD367BECEA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18DEFA8-BCB4-4EA1-966B-CD367BECEA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18DEFA8-BCB4-4EA1-966B-CD367BECEA56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87EDAFDC-05D5-4739-A960-7402205B9813}
+	EndGlobalSection
+EndGlobal
