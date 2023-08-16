@@ -7,7 +7,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "AWSS3AccessKey": "",
-        "AWSS3SecretKey": "+tz9o0jtinP/uIC6R86jn/GCduI",
+        "AWSS3SecretKey": "",
         "AWSS3Bucket": "",
         "AWSS3Region": ""
       },
