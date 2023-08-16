@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
@@ -38,12 +38,12 @@ namespace AWS.API.Controllers
             try
             {
                 string key = request.key;
-                if (request.fileContent == null || request.fileContent["$content"] == null)
+                if (request.fileContent == null )
                 {
                     return new S3ResponseModel { Success = false, Message = "No file content was provided." };
                 }
 
-                byte[] fileContent = Convert.FromBase64String(request.fileContent["$content"]);
+                byte[] fileContent = Convert.FromBase64String(request.fileContent);
                 using (var memoryStream = new MemoryStream(fileContent))
                 {
                     var fileTransferUtility = new TransferUtility(_s3Client);
@@ -112,19 +112,19 @@ namespace AWS.API.Controllers
 
         [HttpDelete]
         [Route("deletefile")]
-        public async Task<S3ResponseModel> DeleteFile(string fileName)
+        public async Task<S3ResponseModel> DeleteFile(string key)
         {
             try
             {
                 var request = new DeleteObjectRequest
                 {
                     BucketName = _bucketName,
-                    Key = fileName
+                    
                 };
                 var response = await _s3Client.DeleteObjectAsync(request);
 
-                _logger.LogInformation($"File {fileName} deleted successfully");
-                return new S3ResponseModel { Success = true, Message = $"File {fileName} deleted successfully" };
+                _logger.LogInformation($"File {key} deleted successfully");
+                return new S3ResponseModel { Success = true, Message = $"File {key} deleted successfully" };
             }
             catch (AmazonS3Exception ex)
             {
