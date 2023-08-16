@@ -1,6 +1,7 @@
 ﻿using Amazon.Runtime;
 using Amazon.S3;
-using Microsoft.OpenApi.Models;
+
+
 
 
 namespace AWS.API
@@ -17,33 +18,29 @@ namespace AWS.API
        
         public void ConfigureServices(IServiceCollection services)
         {
-           
-            var credentials = new BasicAWSCredentials(Configuration["AWS:AccessKey"], Configuration["AWS:SecretKey"]);
+            var accessKey = Environment.GetEnvironmentVariable("AWSS3AccessKey");
+            var secreatKey = Environment.GetEnvironmentVariable("AWSS3SecretKey");
+            var region = Environment.GetEnvironmentVariable("AWSS3Region");
+
+            var credentials = new BasicAWSCredentials(accessKey, secreatKey);
             var config = new AmazonS3Config
             {
-                RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(Configuration["AWS:Region"])
+                RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(region)
             };
             var s3Client = new AmazonS3Client(credentials, config);
 
             services.AddSingleton<IAmazonS3>(s3Client);
 
             services.AddControllers();
+            
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AWSS3.API", Version = "v1" });
-            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                });
+                app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -51,7 +48,8 @@ namespace AWS.API
                 app.UseHsts();
             }
 
-           app.UseHttpsRedirection();
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

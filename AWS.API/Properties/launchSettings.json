@@ -3,9 +3,13 @@
     "AWS.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/S3Storage/index",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AWSS3AccessKey": "",
+        "AWSS3SecretKey": "+tz9o0jtinP/uIC6R86jn/GCduI",
+        "AWSS3Bucket": "",
+        "AWSS3Region": ""
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7010;http://localhost:5223"
@@ -13,7 +17,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/S3Storage/index",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -21,10 +25,11 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/S3Storage/index",
       "publishAllPorts": true,
       "useSSL": true
-    }
+    },
+   
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
