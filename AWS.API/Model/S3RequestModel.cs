@@ -1,9 +1,10 @@
-﻿namespace AWSStorage.API.Model
+namespace AWSStorage.API.Model
 {
     public class S3RequestModel
-    {       
-        public Dictionary<string, string> fileContent { get; set; }
-        public string key { get; set; }
+    {
+        public string fileContent { get; set; }
+        public string key { get; set; }       
+        public string contentType { get; set; }
 
     }
 }
