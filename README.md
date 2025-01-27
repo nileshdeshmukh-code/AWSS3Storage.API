@@ -1,4 +1,4 @@
-```markdown
+
 # AWS S3 Storage Operations using .NET SDK
 
 This repository contains code examples for performing various operations on AWS S3 Storage using the .NET SDK. The operations include uploading, deleting, retrieving, and listing files.
