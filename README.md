@@ -14,7 +14,7 @@ This repository contains code examples for performing various operations on AWS 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/AWSS3Storage.API.git
+   git clone https://github.com/nileshdeshmukh-code/AWSS3Storage.API.git
    ```
 
 2. Navigate to the project directory:
